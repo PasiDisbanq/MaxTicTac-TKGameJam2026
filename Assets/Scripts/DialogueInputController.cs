@@ -16,6 +16,7 @@ public class DialogueInputController : MonoBehaviour
     private int currentLetterIndex = 0;
     private string textContent = "";
     private float currentDelay = 0f;
+    private bool isAnimating = false;
 
     public event Action OnTypingFinish;
 
@@ -48,8 +49,16 @@ public class DialogueInputController : MonoBehaviour
         {
             if (Keyboard.current.enterKey.wasPressedThisFrame)
                 FinishTyping();
-            else if(Keyboard.current.anyKey.wasPressedThisFrame)
-                rt.DOColor(Color.darkRed, .05f).OnComplete(() => rt.color = Color.white);
+            else if (Keyboard.current.anyKey.isPressed && !isAnimating)
+            {
+                isAnimating = true;
+                rt.DOColor(Color.darkRed, .05f).OnComplete(() =>
+                {
+                    rt.color = Color.white;
+                    isAnimating = false;
+                });
+            }
+
         }
         else if (Keyboard.current.anyKey.isPressed && !Keyboard.current.enterKey.isPressed && currentDelay <= 0f)
         {
