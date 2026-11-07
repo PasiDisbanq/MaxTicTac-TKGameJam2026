@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float JumpSpeed;
     private float startPos;
     [SerializeField] private bool IsGrounded;
+    [SerializeField] private bool isHeadButted;
     [SerializeField] private bool ShouldJump;
     [SerializeField] private Transform GroundCheckTransform;
     [SerializeField] private Transform HeadCheckTransform;
@@ -21,16 +22,17 @@ public class PlayerMovement : MonoBehaviour {
         playerAnimScript = GetComponent<PlayerAnimation>();
     }
     private bool IsGroundedCheck() { 
-        RaycastHit2D ray = Physics2D.CapsuleCast(GroundCheckTransform.position, new Vector2(0.7f, 0.5f), CapsuleDirection2D.Horizontal, 0f, Vector2.down, 0.1f, GroundLayer);
+        RaycastHit2D ray = Physics2D.CapsuleCast(GroundCheckTransform.position, new Vector2(0.8f, 0.5f), CapsuleDirection2D.Horizontal, 0f, Vector2.down, 0.1f, GroundLayer);
         return ray.collider != null;
     }
     private bool HeadButted() {
-        RaycastHit2D hit = Physics2D.CircleCast(HeadCheckTransform.position, 0.65f, Vector2.up, 0.1f, GroundLayer);
+        RaycastHit2D hit = Physics2D.CircleCast(HeadCheckTransform.position, 0.45f, Vector2.up, 0.1f, GroundLayer);
         return hit.collider != null;
     }
 
     private void Update() {
         IsGrounded = IsGroundedCheck();
+        isHeadButted = HeadButted();
         moveInput = Vector2.zero;
 
         if (Keyboard.current.dKey.isPressed) {
@@ -48,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
             rb.linearVelocityY = 0f;
         }
 
-        if (HeadButted()) {
+        if (isHeadButted) {
             ShouldJump = false;
         }
         playerAnimScript.UpdateAnimation(IsGrounded, rb.linearVelocity, moveInput);
