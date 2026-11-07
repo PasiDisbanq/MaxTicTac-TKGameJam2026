@@ -22,11 +22,11 @@ public class PlayerMovement : MonoBehaviour {
         playerAnimScript = GetComponent<PlayerAnimation>();
     }
     private bool IsGroundedCheck() { 
-        RaycastHit2D ray = Physics2D.CapsuleCast(GroundCheckTransform.position, new Vector2(0.8f, 0.5f), CapsuleDirection2D.Horizontal, 0f, Vector2.down, 0.1f, GroundLayer);
+        RaycastHit2D ray = Physics2D.CapsuleCast(GroundCheckTransform.position, new Vector2(0.65f, 0.5f), CapsuleDirection2D.Horizontal, 0f, Vector2.down, 0.1f, GroundLayer);
         return ray.collider != null;
     }
     private bool HeadButted() {
-        RaycastHit2D hit = Physics2D.CircleCast(HeadCheckTransform.position, 0.45f, Vector2.up, 0.1f, GroundLayer);
+        RaycastHit2D hit = Physics2D.CircleCast(HeadCheckTransform.position, 0.35f, Vector2.up, 0.1f, GroundLayer);
         return hit.collider != null;
     }
 
