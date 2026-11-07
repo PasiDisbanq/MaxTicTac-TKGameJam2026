@@ -17,8 +17,8 @@ public class Player : MonoBehaviour {
         isAlive = true;
     }
     bool CheckBottomCollision() {
-        RaycastHit2D hit = Physics2D.Raycast(BottomCheck.position, Vector2.down, 0.1f, DeathLayer);
-        return hit.collider != null;
+        Collider2D hit = Physics2D.OverlapCapsule(new Vector2(transform.position.x, transform.position.y-0.03f), new Vector2(0.91f, 1.96f), CapsuleDirection2D.Vertical, 0f, DeathLayer);
+        return hit != null;
     }
 
 

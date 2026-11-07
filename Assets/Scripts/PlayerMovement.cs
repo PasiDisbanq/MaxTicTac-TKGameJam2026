@@ -6,9 +6,12 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float Speed;
     [SerializeField] private float AccelerationRate;
     [SerializeField] private float MaxJumpHeight;
+    [SerializeField] private bool hasDoneImpact = false;
     [SerializeField] private float JumpSpeed;
     private float startPos;
     [SerializeField] private bool IsGrounded;
+    [SerializeField] private float bufor = 0.3f;
+    [SerializeField] private float currentTime;
     [SerializeField] private bool isHeadButted;
     [SerializeField] private bool ShouldJump;
     [SerializeField] private Transform GroundCheckTransform;
@@ -22,7 +25,13 @@ public class PlayerMovement : MonoBehaviour {
         playerAnimScript = GetComponent<PlayerAnimation>();
     }
     private bool IsGroundedCheck() { 
-        RaycastHit2D ray = Physics2D.CapsuleCast(GroundCheckTransform.position, new Vector2(0.65f, 0.5f), CapsuleDirection2D.Horizontal, 0f, Vector2.down, 0.1f, GroundLayer);
+        RaycastHit2D ray = Physics2D.CapsuleCast(GroundCheckTransform.position, new Vector2(0.50f, 0.5f), CapsuleDirection2D.Horizontal, 0f, Vector2.down, 0.1f, GroundLayer);
+        if (ray.collider == null) {
+            currentTime += Time.deltaTime;
+        }
+        else {
+            currentTime = 0;
+        }
         return ray.collider != null;
     }
     private bool HeadButted() {
@@ -41,12 +50,13 @@ public class PlayerMovement : MonoBehaviour {
         if (Keyboard.current.aKey.isPressed) {
             moveInput = new Vector2(-1, moveInput.y);
         }
-        if (Keyboard.current.wKey.wasPressedThisFrame && IsGrounded) {
+        if (Keyboard.current.wKey.wasPressedThisFrame && (IsGrounded || currentTime <= bufor)) {
             ShouldJump = true;
             startPos = transform.position.y;
         }
         if (Keyboard.current.wKey.wasReleasedThisFrame) {
             ShouldJump = false;
+            hasDoneImpact = false;
             rb.linearVelocityY = 0f;
         }
 
@@ -57,14 +67,16 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void TryJump() {
-        if (IsGrounded && ShouldJump) {
-            rb.AddForce(Vector2.up * (JumpSpeed/5), ForceMode2D.Impulse);
+        if ((ShouldJump && (IsGrounded || currentTime <= bufor)) && hasDoneImpact == false) {
+            hasDoneImpact = true;
+            rb.AddForce(Vector2.up * (JumpSpeed/3), ForceMode2D.Impulse);
         }
         else if (ShouldJump) {
             rb.AddForce(Vector2.up * JumpSpeed);
         }
         if (transform.position.y > MaxJumpHeight + startPos && rb.linearVelocityY > 0) {
             ShouldJump = false;
+            hasDoneImpact = false;
             rb.linearVelocityY = 0f;
         }
         
