@@ -7284,10 +7284,10 @@ GameObject:
   - component: {fileID: 933038536}
   - component: {fileID: 933038535}
   - component: {fileID: 933038539}
+  - component: {fileID: 933038542}
   - component: {fileID: 933038537}
   - component: {fileID: 933038541}
   - component: {fileID: 933038540}
-  - component: {fileID: 933038542}
   - component: {fileID: 933038543}
   m_Layer: 0
   m_Name: Player
