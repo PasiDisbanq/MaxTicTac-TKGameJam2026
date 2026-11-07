@@ -8,14 +8,11 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI TMP;
 
     public RectTransform Rt => rt;
-    public float Height => height; 
     
-    private float height;
 
     public void Setup(string textInput)
     {
-        height = background.rect.height;
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x, height);
+        rt.sizeDelta = new Vector2(rt.sizeDelta.x, background.rect.height);
         TMP.text = textInput;
     }
 }
