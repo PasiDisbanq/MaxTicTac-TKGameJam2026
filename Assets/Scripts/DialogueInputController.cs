@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class DialogueInputController : MonoBehaviour
@@ -58,7 +57,6 @@ public class DialogueInputController : MonoBehaviour
                     isAnimating = false;
                 });
             }
-
         }
         else if (Keyboard.current.anyKey.isPressed && !Keyboard.current.enterKey.isPressed && currentDelay <= 0f)
         {

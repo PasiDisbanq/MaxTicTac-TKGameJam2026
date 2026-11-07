@@ -996,6 +996,9 @@ MonoBehaviour:
   - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
     Content: '*emoji rzygania*'
     Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 748fe0b0eb77dc550b75076e04e7c9a9, type: 3}
+    Content: Pobieraj
+    Owner: 0
   - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
     Content: co kurna????
     Owner: 1
