@@ -9,6 +9,8 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private RectTransform dialogueContainer;
     [SerializeField] private SO_Dialogues dialogues;
 
+    [SerializeField] private AudioSource audio;
+
     [SerializeField] private float dialogueAppearDuration = 1f;
     [SerializeField] private float containerMoveDuration = 1f;
     [SerializeField] private float verticalPadding = 10f;
@@ -28,13 +30,17 @@ public class DialogueSystem : MonoBehaviour
         yield return null;
         
         d.Setup(dialogues.dialogues[currentIndex].Content);
-        
-        float newPositionX = (dialogues.dialogues[currentIndex].Owner == Owner.Player) ? 1200 : -1200;
-        d.Rt.localPosition = new Vector2(newPositionX, -totalOffset);
 
-        d.Rt.DOLocalMoveX(0, dialogueAppearDuration);
+        bool playerOwner = dialogues.dialogues[currentIndex].Owner == Owner.Player;
+        
+        // float newPositionX = (playerOwner) ? 1200 : -1200;
+        // d.Rt.localPosition = new Vector2(newPositionX, -totalOffset);
+
+        // d.Rt.DOLocalMoveX(0, dialogueAppearDuration);
         // PlayDialogueAnimationSequence(d.Rt);
         currentIndex++;
+        if(!playerOwner)
+            audio.Play();
     }
 
 }
