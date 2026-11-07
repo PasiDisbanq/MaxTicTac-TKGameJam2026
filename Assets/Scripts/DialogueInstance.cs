@@ -11,6 +11,7 @@ public enum Owner
 [Serializable]
 public struct DialogueInstance
 {
-    public RectTransform prefab;
-    public Owner owner;
+    public Dialogue Prefab;
+    [TextArea] public string Content;
+    public Owner Owner;
 }

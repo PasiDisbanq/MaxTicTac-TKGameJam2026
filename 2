@@ -1,0 +1,33 @@
+using UnityEngine;
+
+public class DialogueController : MonoBehaviour
+{
+    [SerializeField] private DialogueInputController inputController;
+    [SerializeField] private DialogueSystem dialogueSystem;
+
+    private void Start()
+    {
+        inputController.OnTypingFinish += ShowNextDialogue;
+
+        while (!dialogueSystem.IsLast)
+        {
+            if(dialogueSystem.NextOwner == Owner.Player)
+                inputController.Setup(dialogueSystem.NextText);
+            else
+            {
+                ShowNextDialogue();
+            }
+        }
+    }
+
+    private void ShowNextDialogue()
+    {
+        dialogueSystem.InstantiateNextDialogue();
+    }
+
+    // IEnumerator Delay(float seconds)
+    // {
+        // yield return new WaitForSeconds(seconds);
+    // }
+
+}
