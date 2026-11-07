@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TEST_Discord.unity
-    guid: 0ab598b0952310f5da123cb8f91e2b07
+    path: Assets/Scenes/DialogueScene.unity
+    guid: 5a94f74af68b1d6f1b8200f2057be4a6
   - enabled: 1
     path: Assets/Scenes/Manciek.unity
     guid: f0ca6b871419f05498b9f901268015a9

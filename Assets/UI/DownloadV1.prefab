@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   button: {fileID: 984958033409942152}
-  sceneName: Manciek
+  sceneName: Level1_1
 --- !u!1 &3411234377950036840
 GameObject:
   m_ObjectHideFlags: 0
