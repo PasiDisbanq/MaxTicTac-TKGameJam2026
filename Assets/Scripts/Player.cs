@@ -7,10 +7,12 @@ public class Player : MonoBehaviour {
     [SerializeField] private Vector3 RespawnPoint;
     [SerializeField] private LayerMask DeathLayer;
     [SerializeField] private bool isAlive;
+    [SerializeField] private PlaySingleAudio playDeathSound;
 
     
     private void Die() {
        isAlive = false;
+       playDeathSound.PlayClip();
     }
     private void Respawn() {
         transform.position = RespawnPoint;
