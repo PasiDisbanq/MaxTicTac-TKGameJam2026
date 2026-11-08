@@ -68,9 +68,6 @@ MonoBehaviour:
     Content: "ju\u017C ko\u0144cz\u0105 mi sie pomysly o czym pisac"
     Owner: 0
   - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
-    Content: "ju\u017C ko\u0144cz\u0259\u0105 mi sie pomysly o czym pisac"
-    Owner: 0
-  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
     Content: a wiesz ile mnie tokeny kosztowaly?
     Owner: 0
   - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
@@ -90,4 +87,7 @@ MonoBehaviour:
     Owner: 0
   - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
     Content: w koncu tez bedziesz musial
+    Owner: 0
+  - Prefab: {fileID: 7152525152333314290, guid: 51cb2c626162f323d85974f8eceb2142, type: 3}
+    Content: "U\u017Cytkownik jest offline."
     Owner: 0
