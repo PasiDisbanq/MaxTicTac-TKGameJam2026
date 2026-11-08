@@ -119,55 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &3617038
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3617039}
-  - component: {fileID: 3617040}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3617039
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3617038}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.3823, y: -17.15581, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3617040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3617038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad24ad39ec4f8f243b31889cd8662429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  lista:
-  - {fileID: 11400000, guid: e32a6166437a8b81890f95132773f48d, type: 2}
-  - {fileID: 11400000, guid: cc92d95c0fb66671184ba114e0255e60, type: 2}
-  - {fileID: 11400000, guid: 471fa505f930caba893750a26c482d48, type: 2}
-  collected_fake_coin_stage1: 0
 --- !u!1001 &93062821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19365,4 +19316,3 @@ SceneRoots:
   - {fileID: 284831709}
   - {fileID: 1047101689}
   - {fileID: 698007559}
-  - {fileID: 3617039}

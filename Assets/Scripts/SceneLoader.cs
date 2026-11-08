@@ -38,6 +38,7 @@ public class SceneLoader : MonoBehaviour {
             case 3:
                 break;
             default:
+                SceneManager.LoadScene("DialogueScene");
                 break;
         }
     }
