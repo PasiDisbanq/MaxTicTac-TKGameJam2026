@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 4576650414540177191}
   - component: {fileID: 8507285119200004952}
   - component: {fileID: 4212293337589583947}
+  - component: {fileID: 3918303334384406946}
   m_Layer: 0
   m_Name: Square
   m_TagString: Enemy
@@ -267,7 +268,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.752
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -275,8 +276,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 6.93
-  MaxDistance: 15
+  MinDistance: 6.16
+  MaxDistance: 11.8
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -351,6 +352,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3918303334384406946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121392888579289880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf33e66af4cfdc3d96719284282c220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  audioSource: {fileID: 4212293337589583947}
+  audioClips:
+  - {fileID: 8300000, guid: a40c2fe6a29593c3194ee0f0b14634b5, type: 3}
+  - {fileID: 8300000, guid: 9af0b43a3e2ed4557bcad1d23f67e3d6, type: 3}
+  minInterval: 4
+  maxInterval: 10
+  disableRepeating: 0
 --- !u!1 &4733293105236567608
 GameObject:
   m_ObjectHideFlags: 0
