@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,18 +46,18 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
-  spriteExtrude: 0
+  spriteMode: 2
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 160
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationMethod: 0
-  spriteTessellationDetail: 0.11
+  spriteTessellationDetail: -1
   spriteGeometrySubdivision: -1
   textureType: 8
   textureShape: 1
@@ -123,7 +123,7 @@ TextureImporter:
         width: 282
         height: 261
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,24 +138,10 @@ TextureImporter:
       weights: []
     outline: []
     customData: 
-    physicsShape:
-    - - {x: 139, y: -127}
-      - {x: 140, y: -71}
-      - {x: 140, y: 40}
-      - {x: 120, y: 40}
-      - {x: 110, y: 30}
-      - {x: -23, y: 70}
-      - {x: -31, y: 100}
-      - {x: -61, y: 100}
-      - {x: -140, y: 40}
-      - {x: -140, y: 0}
-      - {x: -130, y: 0}
-      - {x: -90, y: -80}
-      - {x: -40, y: -160}
-      - {x: 62, y: -160}
+    physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
