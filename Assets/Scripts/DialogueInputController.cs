@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine.UI;
 
 public class DialogueInputController : MonoBehaviour
@@ -10,6 +11,7 @@ public class DialogueInputController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI inputField;
     [SerializeField] private RawImage rt;
     [SerializeField] private float inputDelay = .2f;
+    [SerializeField] private BlinkingCursor cursor;
 
     private bool isEnabled = false;
     private int currentLetterIndex = 0;
@@ -26,6 +28,7 @@ public class DialogueInputController : MonoBehaviour
 
     public void Setup(string text)
     {
+        cursor.Toggle(true);
         currentLetterIndex = 0;
         inputField.text = "";
         textContent = text;
@@ -34,6 +37,7 @@ public class DialogueInputController : MonoBehaviour
 
     private void FinishTyping()
     {
+        cursor.Toggle(false);
         inputField.text = "";
         isEnabled = false;
         OnTypingFinish?.Invoke();
@@ -43,6 +47,9 @@ public class DialogueInputController : MonoBehaviour
     {
         if (!isEnabled) return;
         currentDelay -= Time.deltaTime;
+        
+        if(inputField.text.Length > 0)
+            cursor.Toggle(false);
 
         if (currentLetterIndex == textContent.Length)
         {
