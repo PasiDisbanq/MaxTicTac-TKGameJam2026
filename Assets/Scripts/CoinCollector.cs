@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CoinCollector : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
+    
     public int Points => points;
     public bool CollectedFake => collectedFake;
 
@@ -17,6 +19,7 @@ public class CoinCollector : MonoBehaviour
         {
             other.gameObject.GetComponent<Coin>().Collect();
             points++;
+            audioSource.Play();
             OnCollect?.Invoke();
         }
         else if (other.gameObject.CompareTag("FakeCoin"))

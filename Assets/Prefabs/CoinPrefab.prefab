@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40752d065bf8347469764964927db047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
+  audioSource: {fileID: 0}
 --- !u!58 &3711553142597702402
 CircleCollider2D:
   m_ObjectHideFlags: 0
