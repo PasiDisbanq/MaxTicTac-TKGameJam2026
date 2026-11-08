@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour {
     private void Update() {
 
         transform.position = Vector3.Lerp(transform.position, 
-            new Vector3(PlayerTransform.position.x, Mathf.Clamp(PlayerTransform.position.y, 3f, 5f), -10), 
+            new Vector3(PlayerTransform.position.x, Mathf.Clamp(PlayerTransform.position.y, 3f, 5f), -100), 
             Time.deltaTime / Duration);
 
     }

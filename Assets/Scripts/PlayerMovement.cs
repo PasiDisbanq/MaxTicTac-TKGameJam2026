@@ -46,8 +46,8 @@ public class PlayerMovement : MonoBehaviour {
         return ray.collider != null;
     }
     private bool HeadButted() {
-        RaycastHit2D hit = Physics2D.CircleCast(HeadCheckTransform.position, 0.35f, Vector2.up, 0.1f, GroundLayer);
-        return hit.collider != null;
+        Collider2D hit = Physics2D.OverlapBox(HeadCheckTransform.position, new Vector2(0.69f, 0.65f), 0, GroundLayer);
+        return hit != null;
     }
 
     private void Update() {
@@ -75,6 +75,8 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if (isHeadButted) {
+            Debug.Log("butt");
+
             ShouldJump = false;
             ShouldInitiateJump = false;
         }
