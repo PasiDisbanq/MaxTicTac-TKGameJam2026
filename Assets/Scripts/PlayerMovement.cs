@@ -14,11 +14,13 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float bufor = 0.3f;
     [SerializeField] private float currentTime;
     [SerializeField] private bool isHeadButted;
+    [SerializeField] private bool isStickyButted;
     [SerializeField] private bool ShouldJump = false;
     [SerializeField] private bool ShouldInitiateJump = false;
     [SerializeField] private Transform GroundCheckTransform;
     [SerializeField] private Transform HeadCheckTransform;
     [SerializeField] private LayerMask GroundLayer;
+    [SerializeField] private LayerMask StickyLayer;
     private Rigidbody2D rb;
     [SerializeField] private Vector2 moveInput;
     private PlayerAnimation playerAnimScript;
@@ -49,10 +51,15 @@ public class PlayerMovement : MonoBehaviour {
         Collider2D hit = Physics2D.OverlapBox(HeadCheckTransform.position, new Vector2(0.69f, 0.65f), 0, GroundLayer);
         return hit != null;
     }
+    private bool StickyButted() {
+        Collider2D hit = Physics2D.OverlapBox(HeadCheckTransform.position, new Vector2(0.69f, 0.65f), 0, StickyLayer);
+        return hit != null;
+    }
 
     private void Update() {
         isGrounded = IsGroundedCheck();
         isHeadButted = HeadButted();
+        isStickyButted = StickyButted();
         moveInput = Vector2.zero;
 
         if (Keyboard.current.dKey.isPressed) {
@@ -73,7 +80,11 @@ public class PlayerMovement : MonoBehaviour {
             hasDoneImpact = false;
             rb.linearVelocityY = 0f;
         }
-
+        if (isStickyButted) {
+            if (Keyboard.current.wKey.wasReleasedThisFrame) {
+                ShouldJump = false;
+            }
+        }
         if (isHeadButted) {
             Debug.Log("butt");
 
