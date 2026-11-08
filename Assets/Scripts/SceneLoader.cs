@@ -1,12 +1,13 @@
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour {
     public static SceneLoader Instance { get; private set; }
     [SerializeField] private SO_Dialogues[] lista;
+    [SerializeField] protected float FadeOutDuration;
 
+    public bool isFading;
     public bool collected_fake_coin_stage1 = false;
 
     private void Awake() {
@@ -41,5 +42,9 @@ public class SceneLoader : MonoBehaviour {
                 SceneManager.LoadScene("DialogueScene");
                 break;
         }
+    }
+
+    public Color SceneFadeOut(float currentTime) {
+        return new Color(0, 0, 0, currentTime / FadeOutDuration);
     }
 }
