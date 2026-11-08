@@ -8,6 +8,8 @@ public class LevelsUI : MonoBehaviour {
 
     private void Start() {
         coinCollectorScript.OnCollect += UpdateGold;
+        time.text = "0";
+        gold.text = "0";
     }
     private float timer;
 
