@@ -990,7 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   dialogueContainer: {fileID: 449542577}
-  dialogues: {fileID: 11400000, guid: 471fa505f930caba893750a26c482d48, type: 2}
+  dialogues: {fileID: 11400000, guid: e32a6166437a8b81890f95132773f48d, type: 2}
   audio: {fileID: 1983154405}
   dialogueAppearDuration: 0.3
   containerMoveDuration: 0.1
