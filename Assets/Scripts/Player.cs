@@ -23,7 +23,6 @@ public class Player : MonoBehaviour {
         return hit != null;
     }
 
-
     private void Start() {
         isAlive = true;
         RespawnPoint = transform.position;

@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] private RectTransform dialogueContainer;
-    [SerializeField] private SO_Dialogues dialogues;
+    [SerializeField] public  SO_Dialogues dialogues;
 
     [SerializeField] private AudioSource audio;
 

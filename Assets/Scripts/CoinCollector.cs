@@ -24,5 +24,7 @@ public class CoinCollector : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("FakeCoin"))
             collectedFake = true;
+
+        SceneLoader.Instance.collected_fake_coin_stage1 = collectedFake;
     }
 }
