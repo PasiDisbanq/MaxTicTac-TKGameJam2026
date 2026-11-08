@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private bool hasDoneImpact = false;
     [SerializeField] private float JumpSpeed;
     private float startPos;
-    [SerializeField] private bool IsGrounded;
+    [SerializeField] private bool isGrounded;
     [SerializeField] private float bufor = 0.3f;
     [SerializeField] private float currentTime;
     [SerializeField] private bool isHeadButted;
@@ -21,6 +22,12 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
     [SerializeField] private Vector2 moveInput;
     private PlayerAnimation playerAnimScript;
+
+    public bool IsGrounded => isGrounded;
+    public Vector2 Velocity => rb.linearVelocity;
+    
+    
+    
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         playerAnimScript = GetComponent<PlayerAnimation>();
@@ -44,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
-        IsGrounded = IsGroundedCheck();
+        isGrounded = IsGroundedCheck();
         isHeadButted = HeadButted();
         moveInput = Vector2.zero;
 
@@ -54,7 +61,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Keyboard.current.aKey.isPressed) {
             moveInput = new Vector2(-1, moveInput.y);
         }
-        if (Keyboard.current.wKey.wasPressedThisFrame && (IsGrounded || currentTime <= bufor)) {
+        if (Keyboard.current.wKey.wasPressedThisFrame && (isGrounded || currentTime <= bufor)) {
             ShouldInitiateJump = true;
             Debug.Log(1);
             startPos = transform.position.y;
@@ -71,11 +78,11 @@ public class PlayerMovement : MonoBehaviour {
             ShouldJump = false;
             ShouldInitiateJump = false;
         }
-        playerAnimScript.UpdateAnimation(IsGrounded, rb.linearVelocity, moveInput);
+        playerAnimScript.UpdateAnimation(isGrounded, rb.linearVelocity, moveInput);
     }
 
     private void TryJump() {
-        if ((IsGrounded || currentTime <= bufor) && hasDoneImpact == false && ShouldInitiateJump) {
+        if ((isGrounded || currentTime <= bufor) && hasDoneImpact == false && ShouldInitiateJump) {
             hasDoneImpact = true;
             ShouldInitiateJump = false;
             ShouldJump = true;
