@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour {
             ShouldJump = true;
             startPos = transform.position.y;
         }
-        if (Keyboard.current.wKey.wasReleasedThisFrame) {
+        if (Keyboard.current.wKey.wasReleasedThisFrame && rb.linearVelocityY > 0) {
             ShouldJump = false;
             hasDoneImpact = false;
             rb.linearVelocityY = 0f;
