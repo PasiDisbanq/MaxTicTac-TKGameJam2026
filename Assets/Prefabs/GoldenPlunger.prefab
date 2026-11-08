@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7720564467647460880}
   - component: {fileID: 7018744216695138909}
   m_Layer: 0
-  m_Name: EndStage
+  m_Name: GoldenPlunger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
