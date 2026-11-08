@@ -43,6 +43,7 @@ public class SceneLoader : MonoBehaviour {
                 SceneManager.LoadScene("DialogueScene");
                 break;
             default:
+                nextDialogueIndex = 0;
                 SceneManager.LoadScene("DialogueScene");
                 break;
         }
