@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DialogueScene.unity
     guid: 5a94f74af68b1d6f1b8200f2057be4a6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: e726c02c3395ab74ead1d10ae258ca96
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level2.unity
     guid: 758572ac3125e650db9827b469abc917
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level3.unity
     guid: e2a0cc0cbd9776a71a98989fa8724b31
   m_configObjects:
