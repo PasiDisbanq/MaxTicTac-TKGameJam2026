@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float bufor = 0.3f;
     [SerializeField] private float currentTime;
     [SerializeField] private bool isHeadButted;
-    [SerializeField] private bool ShouldJump;
+    [SerializeField] private bool ShouldJump = false;
+    [SerializeField] private bool ShouldInitiateJump = false;
     [SerializeField] private Transform GroundCheckTransform;
     [SerializeField] private Transform HeadCheckTransform;
     [SerializeField] private LayerMask GroundLayer;
@@ -31,6 +32,9 @@ public class PlayerMovement : MonoBehaviour {
         }
         else {
             currentTime = 0;
+            rb.linearVelocityY = -5f;
+            hasDoneImpact = false;
+            ShouldJump = false;
         }
         return ray.collider != null;
     }
@@ -51,35 +55,47 @@ public class PlayerMovement : MonoBehaviour {
             moveInput = new Vector2(-1, moveInput.y);
         }
         if (Keyboard.current.wKey.wasPressedThisFrame && (IsGrounded || currentTime <= bufor)) {
-            ShouldJump = true;
+            ShouldInitiateJump = true;
+            Debug.Log(1);
             startPos = transform.position.y;
         }
         if (Keyboard.current.wKey.wasReleasedThisFrame && rb.linearVelocityY > 0) {
+            Debug.Log(2);
             ShouldJump = false;
+            ShouldInitiateJump = false;
             hasDoneImpact = false;
             rb.linearVelocityY = 0f;
         }
 
         if (isHeadButted) {
             ShouldJump = false;
+            ShouldInitiateJump = false;
         }
         playerAnimScript.UpdateAnimation(IsGrounded, rb.linearVelocity, moveInput);
     }
 
     private void TryJump() {
-        if ((ShouldJump && (IsGrounded || currentTime <= bufor)) && hasDoneImpact == false) {
+        if ((IsGrounded || currentTime <= bufor) && hasDoneImpact == false && ShouldInitiateJump) {
             hasDoneImpact = true;
-            rb.AddForce(Vector2.up * (JumpSpeed/3), ForceMode2D.Impulse);
+            ShouldInitiateJump = false;
+            ShouldJump = true;
+            Debug.Log("DONE IMPACT");
+            rb.linearVelocityY = 0;
+            rb.AddForce(Vector2.up * (JumpSpeed / 3), ForceMode2D.Impulse);
         }
-        else if (ShouldJump) {
-            rb.AddForce(Vector2.up * JumpSpeed);
-        }
-        if (transform.position.y > MaxJumpHeight + startPos && rb.linearVelocityY > 0) {
+        if (ShouldJump && (transform.position.y > (MaxJumpHeight + startPos) && rb.linearVelocityY > 0)) {
             ShouldJump = false;
+            ShouldInitiateJump = false;
             hasDoneImpact = false;
             rb.linearVelocityY = 0f;
+            Debug.Log("Stop");
+            return;
         }
         
+        if (ShouldJump && ShouldInitiateJump == false) {
+            Debug.Log("Add force");
+            rb.AddForce(Vector2.up * JumpSpeed);
+        }
     }
 
     private void FixedUpdate() {
