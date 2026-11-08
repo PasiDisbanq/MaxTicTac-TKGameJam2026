@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayAudio : MonoBehaviour
+public class PlayAudioInterchangeably : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clip1;
@@ -14,7 +14,7 @@ public class PlayAudio : MonoBehaviour
     }
    
 
-    public void Play()
+    public void PlayAudio()
     {
         audioSource.PlayOneShot(currentClip);
         currentClip = (currentClip == clip1) ? clip2 : clip1;
