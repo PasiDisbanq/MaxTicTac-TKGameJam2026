@@ -72,6 +72,9 @@ public class PlayerMovement : MonoBehaviour {
             ShouldInitiateJump = true;
             Debug.Log(1);
             startPos = transform.position.y;
+            if (isHeadButted) {
+                ShouldInitiateJump = true;
+            }
         }
         if (Keyboard.current.wKey.wasReleasedThisFrame && rb.linearVelocityY > 0) {
             Debug.Log(2);
@@ -87,9 +90,11 @@ public class PlayerMovement : MonoBehaviour {
         }
         if (isHeadButted) {
             Debug.Log("butt");
-
-            ShouldJump = false;
-            ShouldInitiateJump = false;
+            if (!IsGrounded) {
+                ShouldJump = false;
+                ShouldInitiateJump = false;
+            }
+            
         }
         playerAnimScript.UpdateAnimation(isGrounded, rb.linearVelocity, moveInput);
     }
