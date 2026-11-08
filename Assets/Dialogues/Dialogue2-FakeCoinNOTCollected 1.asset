@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78f8aaa17edcbdc56a08fef22115a81f, type: 3}
-  m_Name: Dialogue2-FakeCoinNOTCollected
+  m_Name: Dialogue2-FakeCoinNOTCollected 1
   m_EditorClassIdentifier: Assembly-CSharp::SO_Dialogues
   dialogues:
   - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
@@ -55,7 +55,7 @@ MonoBehaviour:
   - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
     Content: wiedzialem o tym tylko cie testowalem
     Owner: 0
-  - Prefab: {fileID: 3896994377657085467, guid: c4cffddac12334f4ea85a3f039b4cd05, type: 3}
+  - Prefab: {fileID: 3896994377657085467, guid: 9b001d9a305ff3b22822c62a39060c0c, type: 3}
     Content: Next-Gen Plumber-Man (fixed)
     Owner: 0
   - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}

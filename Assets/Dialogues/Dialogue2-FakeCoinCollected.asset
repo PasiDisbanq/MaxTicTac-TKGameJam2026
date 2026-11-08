@@ -61,7 +61,7 @@ MonoBehaviour:
   - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
     Content: wiedzialem o tym tylko cie testowalem
     Owner: 0
-  - Prefab: {fileID: 3896994377657085467, guid: c4cffddac12334f4ea85a3f039b4cd05, type: 3}
+  - Prefab: {fileID: 3896994377657085467, guid: 9b001d9a305ff3b22822c62a39060c0c, type: 3}
     Content: Next-Gen Plumber-Man (fixed)
     Owner: 0
   - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}

@@ -35,8 +35,12 @@ public class SceneLoader : MonoBehaviour {
                 SceneManager.LoadScene("DialogueScene");
                 break;
             case 2:
+                nextDialogueIndex = 3;
+                SceneManager.LoadScene("DialogueScene");
                 break;
             case 3:
+                nextDialogueIndex = 4;
+                SceneManager.LoadScene("DialogueScene");
                 break;
             default:
                 SceneManager.LoadScene("DialogueScene");
