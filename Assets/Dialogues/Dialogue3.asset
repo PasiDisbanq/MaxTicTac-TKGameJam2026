@@ -22,7 +22,7 @@ MonoBehaviour:
   - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
     Content: prawda*
     Owner: 0
-  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
     Content: wazne pytanie
     Owner: 1
   - Prefab: {fileID: 3896994377657085467, guid: 3e7706568155b65949a567e716f08ca1, type: 3}
