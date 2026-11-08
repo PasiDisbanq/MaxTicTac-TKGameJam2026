@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour {
     public static SceneLoader Instance { get; private set; }
     [SerializeField] private SO_Dialogues[] lista;
-    [SerializeField] protected float FadeOutDuration;
+    public float FadeOutDuration;
 
     public bool isFading;
     public bool collected_fake_coin_stage1 = false;
@@ -42,6 +42,7 @@ public class SceneLoader : MonoBehaviour {
                 SceneManager.LoadScene("DialogueScene");
                 break;
         }
+        isFading = false;
     }
 
     public Color SceneFadeOut(float currentTime) {
