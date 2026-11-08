@@ -19,6 +19,7 @@ public class BlinkingCursor : MonoBehaviour
     void Start()
     {
         startColor = image.color;
+        image.color = Color.clear;
     }
 
     void Update()
