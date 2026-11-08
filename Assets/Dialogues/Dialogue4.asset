@@ -12,4 +12,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f8aaa17edcbdc56a08fef22115a81f, type: 3}
   m_Name: Dialogue4
   m_EditorClassIdentifier: Assembly-CSharp::SO_Dialogues
-  dialogues: []
+  dialogues:
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: kompletnie zepsuta u mnie
+    Owner: 1
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: u ciebie dziala dobrze?
+    Owner: 1
+  - Prefab: {fileID: 3896994377657085467, guid: 3e7706568155b65949a567e716f08ca1, type: 3}
+    Content: jak zepsuta
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: przeciez mialo dzialac
+    Owner: 0
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: '"mialo"?'
+    Owner: 1
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: nie testowales?
+    Owner: 1
+  - Prefab: {fileID: 3896994377657085467, guid: 3e7706568155b65949a567e716f08ca1, type: 3}
+    Content: po co
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: "AI mi powiedzia\u0142o ze bedzie dzialac"
+    Owner: 0
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: aha
+    Owner: 1
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: a gre to w koncu kto napisal
+    Owner: 1
+  - Prefab: {fileID: 3896994377657085467, guid: 3e7706568155b65949a567e716f08ca1, type: 3}
+    Content: jak to kto
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: no ja
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: samodzielnie
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: z AI
+    Owner: 0
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: czyli AI pisalo a nie ty
+    Owner: 1
+  - Prefab: {fileID: 3896994377657085467, guid: 3e7706568155b65949a567e716f08ca1, type: 3}
+    Content: myslisz ze pisanie tych zapytan jest takie proste?
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: "zrywam sobie opuszki palcow pisz\u0105c z AI"
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: "ju\u017C ko\u0144cz\u0105 mi sie pomysly o czym pisac"
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: "ju\u017C ko\u0144cz\u0259\u0105 mi sie pomysly o czym pisac"
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: a wiesz ile mnie tokeny kosztowaly?
+    Owner: 0
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: no
+    Owner: 1
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: powiem ci
+    Owner: 1
+  - Prefab: {fileID: 7152525152333314290, guid: cf4fcd1cdd727e834b89d11f3b3a80ea, type: 3}
+    Content: gargantuiczny wysilek
+    Owner: 1
+  - Prefab: {fileID: 3896994377657085467, guid: 3e7706568155b65949a567e716f08ca1, type: 3}
+    Content: ide z progressem
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: przyzwyczajaj sie
+    Owner: 0
+  - Prefab: {fileID: 3896994377657085467, guid: 8f4ed46c56003dc77aacdca5c1801b4b, type: 3}
+    Content: w koncu tez bedziesz musial
+    Owner: 0
