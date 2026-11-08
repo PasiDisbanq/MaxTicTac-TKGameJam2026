@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
         isAlive = true;
     }
     bool CheckBottomCollision() {
-        Collider2D hit = Physics2D.OverlapCapsule(new Vector2(transform.position.x, transform.position.y-0.03f), new Vector2(0.91f, 1.96f), CapsuleDirection2D.Vertical, 0f, DeathLayer);
+        Collider2D hit = Physics2D.OverlapBox(new Vector2(transform.position.x, transform.position.y-0.03f), new Vector2(0.9f, 1.91f), 0f, DeathLayer);
         return hit != null;
     }
 
@@ -39,8 +39,12 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Checkpoint")) {
             RespawnPoint = collision.transform.position;
-            Destroy(collision.gameObject);
-        }            
-        
+            collision.GetComponent<CheckPointController>().TurnOnCheckPoint();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.collider.CompareTag("Enemy")) {
+            Die();
+        }
     }
 }
