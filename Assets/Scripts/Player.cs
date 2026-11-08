@@ -37,14 +37,12 @@ public class Player : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Enemy")) {
+            Die();
+        }
         if (collision.CompareTag("Checkpoint")) {
             RespawnPoint = collision.transform.position;
             collision.GetComponent<CheckPointController>().TurnOnCheckPoint();
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.collider.CompareTag("Enemy")) {
-            Die();
         }
     }
 }
